@@ -7,3 +7,6 @@
   background-color: black;
   color-scheme: dark;
 }
+body {
+  height: 100%;
+}
