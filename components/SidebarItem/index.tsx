@@ -1,8 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import { IconType } from "react-icons";
 interface SidebarItemsProps {
-  icon: IconType;
+  icon?: any;
   label: string;
   active?: boolean;
   href: string;
@@ -38,7 +37,7 @@ const SidebarItems: React.FC<SidebarItemsProps> = ({
     ${active && "text-white"}
     `}
     >
-      <Icon size={26} />
+      {Icon && <Icon size={26} />}
       <p className="truncate w-full">{label}</p>
     </Link>
   );

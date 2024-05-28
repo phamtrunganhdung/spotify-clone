@@ -5,6 +5,7 @@ import { BiSearch } from "react-icons/bi";
 import { HiHome } from "react-icons/hi";
 import Box from "../Box";
 import SidebarItems from "../SidebarItem";
+import Library from "../Library";
 interface SidebarProps {
   children: React.ReactNode;
 }
@@ -36,13 +37,26 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
       >
         <Box>
           <div className="flex flex-col gap-y-4 px-5 py-4">
+            <p
+              className="truncate w-full font-semibold cursor-pointer hover:text-green-500"
+              onClick={() => {
+                window.open(
+                  "https://github.com/phamtrunganhdung/spotify-clone"
+                );
+              }}
+            >
+              {"Spotify"}
+            </p>
             {routes.map((item, index) => (
               <SidebarItems key={index} {...item} />
             ))}
           </div>
         </Box>
-        <Box className="overflow-y-auto h-full">Song Library</Box>
+        <Box className="overflow-y-auto h-full">
+          <Library />
+        </Box>
       </div>
+      <main className="h-full flex-1 overflow-y-auto py-2">{children}</main>
     </div>
   );
 };
